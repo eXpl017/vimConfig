@@ -9,6 +9,11 @@
 "              
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" BASIC SETTINGS --------------------------------------------------------- {{{
+
+" disable compatibility with VI which could cause unexpected issues
+set nocompatible
+
 " filetype detection on 
 filetype on
 
@@ -69,6 +74,8 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " colorscheme
 colorscheme desert
 
+" }}}
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')
@@ -83,18 +90,35 @@ call plug#end()
 " STATUS LINE ------------------------------------------------------------ {{{
 
 " Clear status line when vimrc is reloaded.
- set statusline=
+set statusline=
 
- " Status line left side.
- set statusline+=\ %F\ %M\ %Y\ %R
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
 
- " Use a divider to separate the left side from the right side.
- set statusline+=%=
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
 
- " Status line right side.
- set statusline+=\ ascii:\ %b\ hex:\ 0x%B
+" Status line right side.
+set statusline+=\ ascii:\ %b\ hex:\ 0x%B
 
- " Show the status on the second to last line.
- set laststatus=2
+" Show the status on the second to last line.
+set laststatus=2
+
+" }}}
+
+" EXTERNAL FILES --------------------------------------------------------- {{{
+
+" Autoclose file, used to get the autoclosing of brackets and quotations in vim
+so ~/.vim/autoclose.vim
+
+" }}}
+
+" VIMSCRIPT -------------------------------------------------------------- {{{
+
+" Enable code folding
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
 
 " }}}
