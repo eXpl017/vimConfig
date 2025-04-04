@@ -12,9 +12,6 @@
 " filetype detection on 
 filetype on
 
-" enable and load plugin for detected file type
-filetype plugin on
-
 " syntax highlighting
 syntax on
 
@@ -24,8 +21,31 @@ set number
 " highlight cursor line horizontally
 set cursorline
 
-" tab=4
+" tab=4, softtab=4, shiftwidth=4
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" preserve indents
+set autoindent
+set smartindent
+set smarttab
+
+" no wrapping
+set nowrap
+
+" scroll with 8 lines showing below
+set scrolloff=8
+
+" no sound when small errors made
+set noerrorbells visualbell t_vb=
+
+" see invisible chars
+set list
+set listchars=eol:.,tab:.-,trail:~,extends:>,precedes:<
+
+" highlight patter when typing word in search
+set incsearch
 
 " mouse on
 set mouse=a
