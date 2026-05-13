@@ -89,6 +89,8 @@ call plug#begin('~/.vim/plugged')
 
    Plug 'dense-analysis/ale'
    Plug 'scrooloose/nerdtree'
+   Plug '~/.fzf'
+   Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
